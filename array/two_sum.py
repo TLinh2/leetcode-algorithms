@@ -24,19 +24,19 @@ Output: [0,1]
 """
 
 
-# # Solution 1: Brute Force
-# def solve_two_sum1(nums, target):
-#     i = 0
-#     while i < len(nums):
-#         j = i + 1
-#         while j < len(nums):
-#             if nums[i] + nums[j] == target:
-#                 return [i, j]
-#             j += 1
-#         i += 1
-#     return False
+# Solution 1: Brute Force
+def solve_two_sum1(nums, target):
+    i = 0
+    while i < len(nums):
+        j = i + 1
+        while j < len(nums):
+            if nums[i] + nums[j] == target:
+                return [i, j]
+            j += 1
+        i += 1
+    return False
 
-# print(solve_two_sum1([2,7,11,15], 9))
+print(solve_two_sum1([2,7,11,15], 9))
 
 # Solution 2: Two Pointers
 def solve_two_sum2(nums, target):
@@ -47,7 +47,7 @@ def solve_two_sum2(nums, target):
     print(nums)
     i = 0
     j = len(nums) - 1
-    while True:
+    while i < j:
         if nums_with_index[i][0] + nums_with_index[j][0] > target:
             if i + 1 == j:
                 return False
