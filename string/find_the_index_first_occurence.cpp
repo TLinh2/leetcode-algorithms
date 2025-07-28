@@ -81,20 +81,26 @@ int kmp_algorithm(string haystack, string needle){
     vector <int> failure_array = build_failure_function(needle);
 
     // c. Khởi tạo một vòng lặp.
-    for (; index_haystack < haystack.length(); index_haystack++){
+    while (index_haystack < haystack.length()){
 
         //d. Kiểm tra haystack[index_haystack] == needle[index_needle].
         if (haystack[index_haystack] == needle[index_needle]){
-            // g. Nếu trùng phần tử cuối cùng của string needle, return vị trí bắt đầu của chuỗi trùng.
+                // g. Nếu trùng phần tử cuối cùng của string needle, return vị trí bắt đầu của chuỗi trùng.
             if (index_needle == needle.length()-1){
                 return index_haystack - index_needle;
             }
             // e. Nếu bằng, index_needle ++.
+            index_haystack++;
             index_needle ++;
         }
         else {
-            // f. Nếu không bằng, index_needle chỉ việc quay về vị trí failure[index_needle - 1], giảm sự so sánh thừa.
-            index_needle = failure_array[index_needle-1];
+            if (index_needle > 0){
+                // f. Nếu không bằng, index_needle chỉ việc quay về vị trí failure[index_needle - 1], giảm sự so sánh thừa.
+                index_needle = failure_array[index_needle-1];
+            }
+            else {
+                index_haystack++;
+            }
         }
     }
 
