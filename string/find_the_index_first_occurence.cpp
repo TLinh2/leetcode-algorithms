@@ -28,8 +28,8 @@ Explanation: "leeto" did not occur in "leetcode", so we return -1.
         5. Nếu bằng thì lưu vào mảng failure độ dài của chuỗi đã trùng tính cho đến phần tử j.
         6. Ngược lại thì index k phải quay về vị trí fail[k-1].
         7. Nếu k == 0 rồi thì không quay về nữa.
-
-        Ví dụ nếu string s là 'abacab' thì đầu ra là '[0, 0, 1, 0, 1, 2]'.
+    => Ví dụ nếu string s là 'abacab' thì đầu ra là '[0, 0, 1, 0, 1, 2]'.
+    
     - Tạo hàm thuật toán KMP (đầu vào là 2 string haystack, needle):
         a. Khởi tạo biến index_haystack cho string haystack, index_needle cho string needle.
         b. Lấy mảng failure cho string needle.
