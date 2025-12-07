@@ -28,5 +28,5 @@ int main(){
 
 
 # github
-git commit -m "Implement solution for 'Search Insert Position' (LeetCode #35)"
+git commit -m "Implement solution for Pascal's Triangle (LeetCode #118)"
 
