@@ -18,7 +18,7 @@ Output: [[1]]
 
 using namespace std;
 
-vector <vector<int>> solve_pascal_triangle(int number_of_rows){
+vector <vector<int>> solve_pascal_triangle_I(int number_of_rows){
     vector <vector<int>> results (number_of_rows);
     vector <int> prev_row;
     int length_of_cur_row = 1;
@@ -63,7 +63,7 @@ void print_rows(vector <vector<int>> a){
 
 int main(){
     int number_of_rows = 10;
-    vector <vector<int>> results = solve_pascal_triangle(number_of_rows);
+    vector <vector<int>> results = solve_pascal_triangle_I(number_of_rows);
     cout << "size of results: " << results.size() << "\n";
     print_rows(results);
 }
